@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/docs/',
   title: "Mermaid Viewer Docs",
   description: "Docs for Mermaid Viewer (https://mermaidviewer.com)",
   themeConfig: {
@@ -52,5 +53,6 @@ export default defineConfig({
     // socialLinks: [
     //   { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     // ]
+    
   }
 })

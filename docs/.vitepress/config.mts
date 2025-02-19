@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/docs/',
+  base: '/',
   title: "Mermaid Viewer Docs",
   description: "Docs for Mermaid Viewer (https://mermaidviewer.com)",
   themeConfig: {

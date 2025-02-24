@@ -10,6 +10,11 @@ export default defineConfig({
     logo: '/logo.svg',
     siteTitle: 'Mermaid Viewer Docs'
   },
+  lastUpdated: true,
+  sitemap: {
+    hostname: 'https://docsmermaidviewer.com',
+    lastmodDateOnly: false
+  },
 
   locales: {
     root: {

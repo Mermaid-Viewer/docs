@@ -1,6 +1,6 @@
 # [Mermaid Viewer](https://mermaidviewer.com) Live Editor
 
-The [Mermaid Viewer](https://mermaidviewer.com) Live Editor is a professional diagram creation environment that provides powerful editing features and real-time preview, helping you efficiently create various types of technical diagrams.
+The [Mermaid Viewer Live Editor](https://mermaidviewer.com/editor) is a professional diagram creation environment that provides powerful editing features and real-time preview, helping you efficiently create various types of technical diagrams.
 
 ### Editor Layout
 
@@ -54,4 +54,4 @@ The editor is built on modern web technologies:
 - Employs responsive design to adapt to various screen sizes
 - Supports touch operations and gesture controls
 
-The [Mermaid Viewer](https://mermaidviewer.com) Live Editor provides an ideal diagram creation environment for technical documentation authors, software engineers, product managers, and educators, allowing you to create professional diagrams anytime, anywhere, without installing any software. 
+The [Mermaid Viewer Live Editor](https://mermaidviewer.com/editor) provides an ideal diagram creation environment for technical documentation authors, software engineers, product managers, and educators, allowing you to create professional diagrams anytime, anywhere, without installing any software. 

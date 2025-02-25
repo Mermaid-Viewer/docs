@@ -1,6 +1,6 @@
 # [Mermaid Viewer](https://mermaidviewer.com) 라이브 편집기
 
-[Mermaid Viewer](https://mermaidviewer.com)의 라이브 편집기는 강력한 편집 기능과 실시간 미리보기를 제공하는 전문적인 다이어그램 생성 환경으로, 다양한 유형의 기술 다이어그램을 효율적으로 만들 수 있도록 도와줍니다.
+[Mermaid Viewer Live Editor](https://mermaidviewer.com/editor)는 강력한 편집 기능과 실시간 미리보기를 제공하는 전문적인 다이어그램 생성 환경으로, 다양한 유형의 기술 다이어그램을 효율적으로 만들 수 있도록 도와줍니다.
 
 ### 편집기 레이아웃
 
@@ -54,4 +54,4 @@
 - 다양한 화면 크기에 적응하는 반응형 디자인 채택
 - 터치 조작 및 제스처 컨트롤 지원
 
-[Mermaid Viewer](https://mermaidviewer.com)의 라이브 편집기는 기술 문서 작성자, 소프트웨어 엔지니어, 제품 관리자, 교육자에게 이상적인 다이어그램 생성 환경을 제공하여 소프트웨어를 설치하지 않고도 언제 어디서나 전문적인 다이어그램을 만들 수 있게 합니다. 
+[Mermaid Viewer Live Editor](https://mermaidviewer.com/editor)는 기술 문서 작성자, 소프트웨어 엔지니어, 제품 관리자, 교육자에게 이상적인 다이어그램 생성 환경을 제공하여 소프트웨어를 설치하지 않고도 언제 어디서나 전문적인 다이어그램을 만들 수 있게 합니다. 

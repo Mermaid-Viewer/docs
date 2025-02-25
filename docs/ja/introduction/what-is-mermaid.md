@@ -82,4 +82,4 @@ Mermaid を使い始めるには：
 
 - [始め方](/ja/introduction/getting-started) - 基本的な構文と使用方法を学ぶ
 - [フローチャート](/ja/diagrams/flowchart) - 最も一般的な図の種類について詳しく学ぶ
-- [オンラインエディタ](/ja/mermaid-viewer/full-screen-editor) - オンラインツールで図を作成 
+- [オンラインエディタ](/ja/mermaid-viewer/live-editor) - オンラインツールで図を作成 

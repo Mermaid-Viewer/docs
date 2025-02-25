@@ -129,5 +129,5 @@ gantt
 ## 在线资源
 
 - [官方文档](https://mermaid.js.org/)
-- [在线编辑器](/zh/mermaid-viewer/full-screen-editor)
+- [在线编辑器](/zh/mermaid-viewer/live-editor)
 - [示例库](/zh/examples) 

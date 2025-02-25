@@ -82,4 +82,4 @@ classDiagram
 
 - [快速开始](/zh/introduction/getting-started) - 学习基本语法和使用方法
 - [流程图](/zh/diagrams/flowchart) - 深入了解最常用的图表类型
-- [在线编辑器](/zh/mermaid-viewer/full-screen-editor) - 使用在线工具创建图表 
+- [在线编辑器](/zh/mermaid-viewer/live-editor) - 使用在线工具创建图表 

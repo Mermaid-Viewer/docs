@@ -82,4 +82,4 @@ Mermaid를 시작하려면:
 
 - [시작하기](/ko/introduction/getting-started) - 기본 구문과 사용법 학습
 - [순서도](/ko/diagrams/flowchart) - 가장 일반적인 도표 유형 자세히 알아보기
-- [온라인 에디터](/ko/mermaid-viewer/full-screen-editor) - 온라인 도구로 도표 만들기 
+- [온라인 에디터](/ko/mermaid-viewer/live-editor) - 온라인 도구로 도표 만들기 

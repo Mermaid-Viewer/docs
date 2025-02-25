@@ -129,5 +129,5 @@ Markdown ファイルでの使用：
 ## オンラインリソース
 
 - [公式ドキュメント](https://mermaid.js.org/)
-- [オンラインエディタ](/ja/mermaid-viewer/full-screen-editor)
+- [オンラインエディタ](/ja/mermaid-viewer/live-editor)
 - [サンプル集](/ja/examples) 

@@ -12,7 +12,7 @@ export default defineConfig({
   },
   lastUpdated: true,
   sitemap: {
-    hostname: 'https://docsmermaidviewer.com',
+    hostname: 'https://docs.mermaidviewer.com',
     lastmodDateOnly: false
   },
 
@@ -63,7 +63,7 @@ export default defineConfig({
             items: [
               { text: 'Introduction', link: '/mermaid-viewer/introduction' },
               { text: 'How to Use', link: '/mermaid-viewer/how-to-use' },
-              { text: 'Full Screen Editor', link: '/mermaid-viewer/full-screen-editor' }
+              { text: 'Live Editor', link: '/mermaid-viewer/live-editor' }
             ]
           }
         ]
@@ -116,7 +116,7 @@ export default defineConfig({
             items: [
               { text: '官网介绍', link: '/zh/mermaid-viewer/introduction' },
               { text: '如何使用', link: '/zh/mermaid-viewer/how-to-use' },
-              { text: '全屏编辑器', link: '/zh/mermaid-viewer/full-screen-editor' }
+              { text: '实时编辑器', link: '/zh/mermaid-viewer/live-editor' }
             ]
           }
         ]
@@ -169,7 +169,7 @@ export default defineConfig({
             items: [
               { text: '紹介', link: '/ja/mermaid-viewer/introduction' },
               { text: '使い方', link: '/ja/mermaid-viewer/how-to-use' },
-              { text: '全画面エディタ', link: '/ja/mermaid-viewer/full-screen-editor' }
+              { text: 'ライブエディタ', link: '/ja/mermaid-viewer/live-editor' }
             ]
           }
         ]
@@ -222,7 +222,7 @@ export default defineConfig({
             items: [
               { text: '소개', link: '/ko/mermaid-viewer/introduction' },
               { text: '사용 방법', link: '/ko/mermaid-viewer/how-to-use' },
-              { text: '전체 화면 편집기', link: '/ko/mermaid-viewer/full-screen-editor' }
+              { text: '라이브 편집기', link: '/ko/mermaid-viewer/live-editor' }
             ]
           }
         ]

@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed, shallowRef } from 'vue';
+import { ref, onMounted, computed, shallowRef, watch, nextTick } from 'vue';
 import mermaid from 'mermaid';
 
 const props = defineProps({
@@ -47,6 +47,7 @@ const svg = ref('');
 const code = ref(decodeURIComponent(props.graph));
 const contentEditable = ref(true);
 const editableContent = ref(null);
+const isDarkMode = ref(false);
 
 // 多语言标签
 const labels = computed(() => {
@@ -54,7 +55,7 @@ const labels = computed(() => {
     en: { code: 'Code', run: 'Run' },
     'zh-CN': { code: '代码', run: '运行' },
     'ja-JP': { code: 'コード', run: '実行' },
-    'ko-KR': { code: '코드', run: '실행' }
+    'ko-KR': { code: '코드', run: '실行' }
   };
   
   // 检测当前语言
@@ -71,6 +72,32 @@ onMounted(() => {
   ctrlSymbol.value = typeof navigator !== 'undefined' && navigator.platform?.includes('Mac') 
     ? '⌘' 
     : 'Ctrl';
+    
+  // 初始化暗色模式状态
+  if (typeof document !== 'undefined') {
+    isDarkMode.value = document.documentElement.classList.contains('dark');
+    
+    // 监听主题变化
+    const observer = new MutationObserver((mutations) => {
+      for (const mutation of mutations) {
+        if (mutation.attributeName === 'class') {
+          const newIsDarkMode = document.documentElement.classList.contains('dark');
+          if (isDarkMode.value !== newIsDarkMode) {
+            isDarkMode.value = newIsDarkMode;
+          }
+        }
+      }
+    });
+    
+    observer.observe(document.documentElement, { attributes: true });
+  }
+});
+
+// 监听暗色模式变化，重新渲染图表
+watch(isDarkMode, () => {
+  nextTick(() => {
+    renderChart();
+  });
 });
 
 const updateCode = (e) => {
@@ -78,15 +105,40 @@ const updateCode = (e) => {
 };
 
 const renderChart = async () => {
+  if (typeof document === 'undefined') return; // 避免在 SSR 中执行
+  
   try {
-    // 检测当前主题是否为暗色
-    const hasDarkClass = document.documentElement?.classList.contains('dark') || false;
+    // 获取当前主题
+    const hasDarkClass = isDarkMode.value;
     
     // 配置 Mermaid
     const mermaidConfig = {
       securityLevel: 'loose',
       startOnLoad: false,
       theme: hasDarkClass ? 'dark' : 'default',
+      darkMode: hasDarkClass,
+      themeVariables: hasDarkClass ? {
+        // 暗色主题变量
+        primaryColor: '#1f2937',
+        primaryTextColor: '#f3f4f6',
+        primaryBorderColor: '#6b7280',
+        lineColor: '#d1d5db',
+        secondaryColor: '#374151',
+        tertiaryColor: '#111827',
+        // 节点颜色
+        nodeBorder: '#6b7280',
+        nodeTextColor: '#f3f4f6',
+        // 关系线颜色
+        edgeLabelBackground: '#374151',
+        // 背景色
+        background: '#1f2937',
+        mainBkg: '#374151',
+        // 其他颜色
+        titleColor: '#f3f4f6',
+        altBackground: '#111827',
+        // 字体
+        fontFamily: 'ui-sans-serif, system-ui, sans-serif',
+      } : {}
     };
     
     // 初始化 Mermaid
@@ -137,6 +189,27 @@ onMounted(() => {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.buttons-container button:hover {
+  background-color: var(--vp-c-brand-dark);
+  transform: translateY(-1px);
+}
+
+.buttons-container button:active {
+  transform: translateY(0);
+}
+
+/* 暗色模式下的按钮样式 */
+.dark .buttons-container button {
+  background-color: var(--vp-c-brand-dark, #3451b2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark .buttons-container button:hover {
+  background-color: var(--vp-c-brand, #4969d9);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 
 .editable-code {
@@ -146,5 +219,34 @@ onMounted(() => {
 .error {
   color: red;
   white-space: pre-wrap;
+}
+
+/* 暗色模式下的图表样式优化 */
+.dark .mermaid-chart svg {
+  filter: brightness(0.95);
+}
+
+.dark .mermaid-chart .label {
+  fill: #f3f4f6;
+  color: #f3f4f6;
+}
+
+.dark .mermaid-chart .node rect,
+.dark .mermaid-chart .node circle,
+.dark .mermaid-chart .node ellipse,
+.dark .mermaid-chart .node polygon,
+.dark .mermaid-chart .node path {
+  fill: #374151;
+  stroke: #6b7280;
+}
+
+.dark .mermaid-chart .edgeLabel {
+  background-color: #374151;
+  color: #f3f4f6;
+}
+
+.dark .mermaid-chart .cluster rect {
+  fill: #1f2937;
+  stroke: #6b7280;
 }
 </style> 

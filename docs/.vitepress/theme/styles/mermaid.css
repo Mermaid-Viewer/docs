@@ -1,0 +1,39 @@
+/* Mermaid 样式 */
+.mermaid-chart svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.language-mermaid {
+  position: relative;
+}
+
+.language-mermaid pre {
+  padding: 1em;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+/* 暗色主题适配 */
+.dark .mermaid-chart .label {
+  color: #f8f8f2;
+  fill: #f8f8f2;
+}
+
+.dark .mermaid-chart .node rect,
+.dark .mermaid-chart .node circle,
+.dark .mermaid-chart .node polygon,
+.dark .mermaid-chart .node path {
+  fill: #282a36;
+  stroke: #f8f8f2;
+}
+
+.dark .mermaid-chart .edgeLabel {
+  background-color: #282a36;
+  color: #f8f8f2;
+}
+
+.dark .mermaid-chart .cluster rect {
+  fill: #282a36;
+  stroke: #f8f8f2;
+} 

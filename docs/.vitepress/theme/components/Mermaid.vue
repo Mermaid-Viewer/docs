@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, shallowRef } from 'vue';
 import mermaid from 'mermaid';
 
 const props = defineProps({
@@ -58,14 +58,19 @@ const labels = computed(() => {
   };
   
   // 检测当前语言
-  const currentLang = props.lang || document.documentElement.lang || 'en';
+  const currentLang = props.lang || document.documentElement?.lang || 'en';
   
   // 返回对应语言的标签，如果没有则使用英文
   return translations[currentLang] || translations.en;
 });
 
-const ctrlSymbol = computed(() => {
-  return navigator.platform.includes('Mac') ? '⌘' : 'Ctrl';
+// 修复 SSR 问题：避免在服务器端访问 navigator
+const ctrlSymbol = shallowRef('Ctrl');
+onMounted(() => {
+  // 只在客户端执行
+  ctrlSymbol.value = typeof navigator !== 'undefined' && navigator.platform?.includes('Mac') 
+    ? '⌘' 
+    : 'Ctrl';
 });
 
 const updateCode = (e) => {
@@ -75,7 +80,7 @@ const updateCode = (e) => {
 const renderChart = async () => {
   try {
     // 检测当前主题是否为暗色
-    const hasDarkClass = document.documentElement.classList.contains('dark');
+    const hasDarkClass = document.documentElement?.classList.contains('dark') || false;
     
     // 配置 Mermaid
     const mermaidConfig = {

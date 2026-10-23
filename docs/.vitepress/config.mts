@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import mermaidMarkdown from './mermaid-markdown'
+import { normalizeSitemapItems, seoTransformHead } from './seo-head'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -12,9 +13,19 @@ export default defineConfig({
     siteTitle: 'Mermaid Viewer Docs'
   },
   lastUpdated: true,
+  // cleanUrls stays at its default (false): public URLs end in .html.
+  // transformHead emits a self-canonical to that .html URL on every page,
+  // plus hreflang alternates (en/zh/ja/ko and x-default) when the page
+  // exists in more than one locale. Sitemap locs are aligned to the same URLs.
   sitemap: {
     hostname: 'https://docs.mermaidviewer.com',
-    lastmodDateOnly: false
+    lastmodDateOnly: false,
+    transformItems(items) {
+      return normalizeSitemapItems(items)
+    }
+  },
+  transformHead(context) {
+    return seoTransformHead(context)
   },
 
   locales: {
